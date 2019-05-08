@@ -9,21 +9,14 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''uname -a
-hostname
-whoami
-uptime
-echo "ran some commands!"
-
-'''
-      }
+        sh 'hostname'
     }
     stage('Test') {
       environment {
         CI = 'true'
       }
       steps {
-        sh './jenkins/scripts/test.sh'
+        sh 'hostname'
       }
     }
   }
